@@ -7,6 +7,7 @@ import TodoForm from './components/TodoForm';
 import PostList from './components/PostList';
 import Pagination from './components/Pagination';
 import PostFiltersForm from './components/PostFiltersForm';
+import Clock from './components/Clock';
 
 function App() {
   const [todoList, settodoList] = useState([
@@ -27,6 +28,8 @@ function App() {
     _limit: 10,
     _page: 1,
   });
+
+  const [showClock, setShowClock] = useState(true);
 
   useEffect(() => {
     async function fetchPostList() {
@@ -76,11 +79,25 @@ function App() {
       _page: 1,
       title_like: newFilters.searchValue,
     })
-  }
+  };
 
   return (
     <div className="app">
-      <h1>Post List</h1>
+      <h1>Clock</h1>
+
+      {showClock && <Clock />}
+
+      <button
+        onClick={() => setShowClock(false)}
+      >
+        Hide Clock
+      </button>
+      <button
+        onClick={() => setShowClock(true)}
+      >
+        Show Clock
+      </button>
+
 
       {/* <TodoForm
         onSubmit={handleTodoFormSubmit}
@@ -89,13 +106,13 @@ function App() {
         todos={todoList}
         onTodoClick={handleTodoClick}
       /> */}
-      <PostFiltersForm onSubmit={handleFiltersChange} />
+      {/* <PostFiltersForm onSubmit={handleFiltersChange} />
       <PostList posts={postList} />
       <Pagination
         pagination={pagination}
         onPageChange={handlePageChange}
-      />
-    </div>
+      /> */}
+    </div >
   );
 }
 
