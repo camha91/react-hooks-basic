@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './ColorBox.css';
+import './ColorBox.scss';
 
 function getRandomColor() {
     const COLOR_LIST = ['deeppink', 'green', 'yellow', 'red', 'blue'];
