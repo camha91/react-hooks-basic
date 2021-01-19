@@ -9,6 +9,7 @@ import Pagination from './components/Pagination';
 import PostFiltersForm from './components/PostFiltersForm';
 import Clock from './components/Clock';
 import BetterClock from './components/BetterClock';
+import MagicBox from './components/MagicBox';
 
 function App() {
   const [todoList, settodoList] = useState([
@@ -84,9 +85,11 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Clock</h1>
+      <h1>Magic Box</h1>
 
-      {showClock && <Clock />}
+      <MagicBox />
+
+      {/* {showClock && <Clock />}
 
       <BetterClock />
 
@@ -99,7 +102,7 @@ function App() {
         onClick={() => setShowClock(true)}
       >
         Show Clock
-      </button>
+      </button> */}
 
 
       {/* <TodoForm
